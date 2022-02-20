@@ -19,3 +19,16 @@ result5=pow(2,8)
 result6=round(69.9675564)
 
 print(result, "  ", result2," ",result3," ",result4," ",result5," ",result6)
+
+## data type check
+num = 20.5
+print(type(num))
+print(type(True))
+## printing in same line
+print("I am Rezwanur",end=",  ")
+print("my id is 1808059")
+##Relational Operator
+result7= 30<20
+print(result7)
+
+print("I dont want to go RUET said by Bashar")
