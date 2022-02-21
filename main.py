@@ -55,7 +55,7 @@ elif mark>=50:
 else:
     print("I am sorry for you, no Grade achieved")
 
-'''
+
 
 ##Nested if
 if 7>3:  ## if this condition is true then go to nest line
@@ -84,3 +84,4 @@ if num4>=80 and num4<=100:      ## if one condition is false then doesnt give ou
     print("80 to 100 is A+ Range")
 if 70<=num4<=80:
     print("70 to 80 is A range")     ## Python can use this too
+'''
