@@ -84,4 +84,44 @@ if num4>=80 and num4<=100:      ## if one condition is false then doesnt give ou
     print("80 to 100 is A+ Range")
 if 70<=num4<=80:
     print("70 to 80 is A range")     ## Python can use this too
-'''
+
+print("------------------------------------------------------------")
+print("AssalamuAlaykum")
+
+z= int(input("Put your number range"))    # 1+2+3+4......n
+i=1
+sum= 0
+while int(i)<=z:
+    print(i)
+    sum = int(sum)+ int(i)   #type casted , from string to integer
+    i+=1
+print("End of counting")
+print"Sum is",sum
+print("-------------------------------------------------------------") 
+
+# Break and continue
+
+i=1
+j=1
+while i<=100:
+    if i==20:
+        break  # break example
+    print(i)
+    i+=1
+print("------- -------")
+while j<=100:
+    if j==30:
+        continue
+    print(j)
+    j+=1'''
+
+print("-----------------------------")
+
+Language=["C","C++","Java","PHP","Javascript","Python"]
+print(Language)
+print("I am expert in "+Language[2])    # printing what contains index 2
+print(Language[2:])      # printing from index 2 to end
+print(Language[-1])      # printing from opposite
+print("Kotlin" in Language)   # checking 
+print(Language + ["Kotlin",27])   # adding more contenet to list
+print(Language*3)    # multiplying 
