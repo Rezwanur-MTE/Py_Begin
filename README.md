@@ -1,3 +1,4 @@
 # Py_Begin
-I am newbie 
+
 This is my Learning stage
+Basic Python scripting is stored.
