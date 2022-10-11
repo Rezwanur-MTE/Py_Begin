@@ -115,7 +115,7 @@ while j<=100:
     print(j)
     j+=1
 
-print("-----------------------------")
+print("List-----------------------------")
 
 Language=["C","C++","Java","PHP","Javascript","Python"]
 print(Language)
@@ -162,7 +162,7 @@ for x in num:
      sum=sum+x
 print("Sum of list is ",sum)
 
-print("-Series----------------------------------")
+print("Series------------------------------------")
 
 # Series sum 1+2+3+4+5+6......n
 
@@ -232,6 +232,166 @@ for i in range(1,smaller+1,1):
 print("GCD is ",GCD)
 
 LCM = (num1*num2)/GCD
-print("LCM is ",LCM)'''
+print("LCM is ",LCM)
 
 print("Pattern-------------...............................")
+
+x=int(input("Input the line number: "))
+for i in range(1,x+1,1):
+        print(i*"* ")
+
+for i in range(1,x+1,1):
+        print((2*i-1)*"* ")    # everyline has extra 2 star
+
+print("Guessing Game--------------------------------------")    
+
+from random import *
+
+for i in range(1,4):                   # it will test 3 times
+    guess=int(input("Guess a number between 1 to 10: "))
+    randnum= randint(1,10)
+    if randnum==guess :
+        print(" It Matches. You won brother")
+    else : 
+         print("You Lose! try again")
+         print("The number was",randnum)
+
+print("User Input in List-----------------------------------") 
+
+n = input("Enter your numbers: ")
+
+list=n.split(",")   # Example of split function
+print(list)     
+
+sum=0
+for num in list:
+    sum= sum + int(num)
+print("Sum from User Input list is ", sum)
+
+print("Matrix---------------------------------------------")
+
+matrix=[[4,9,3],
+        [0,7,8]]
+
+print("In 0 no row and 2 no column number is ", matrix[0][2])
+
+for row in matrix:
+    for column in row:
+        print("The matrix holding ",column)
+
+print("Dictionary---------------------------------------")
+
+studentID= {
+           "1808059" : "Rezwanur",
+           "1808034" : "Jaoyad",
+           "1808036" : "Saad",
+           "1808044" : "Sagar"
+           }
+print(studentID["1808059"])
+print(studentID.get("1808044","Data not found"))
+print(studentID.get("1808045","Data not found"))
+
+print("Tuples---------------------------------------")
+students=(  ("Rezwanur",1808059,3), 
+            "Jaoyad",
+            "Ariful",
+            "Anisul",
+            "Mitin"
+          )
+
+print("Info in 0 no index of Tuples is ", students[0])
+print("Data from 1 no index to end are", students[1:])
+
+print("Set-------------------------------------------")
+
+num1={1,2,3,4,5,4,4,5}
+print("num1 set contains ",num1)
+
+num2=set([4,5,6,9,1])    # convertig list into set
+print("num2 set contains ",num2)
+
+num2.add(7)
+num2.remove(6)
+print("num2 modified ",num2)
+
+print("Union of Set num1 and num2", num1 | num2)
+print("Intersection of set num1 and num2", num1 & num2)
+print("Difference of set num1 and num2", num1-num2)
+
+print("Stack and Queue--------------------------------------")
+
+books=[]
+books.append("Learn C")
+books.append("Learn Java")
+books.append("Learn C++")
+books.append("python")
+books.append("Learn DSA")
+books.append("Software Development")
+
+print("The stack of books contains ",books)
+books.pop()    # delete one iteam from the last 
+print("Mandatories are ",books)
+
+print("Now the top book is ",books[-1])
+books.pop()
+if not books:
+    print("No books left")
+
+from collections import deque
+
+bank= deque(["Anisula","Fahim","Karim","Jaoyad"])
+print("People in queue ",bank)
+bank.popleft()
+print("People who left ",bank)
+
+print("FUNCTION-----------------------------------------____________________________")
+
+def Calculation(x,y,z):
+    sum= float(x) + float(y) + float(z)
+    print("Sum from the function is ", sum)
+    sub= float(z) - float(x)
+    print("Subtraction of z and x is ",sub)
+    mul= float(x)*float(y)*float(z)
+    print("Multiplication of x y z is ",mul)
+    div= x/y
+    print("Division is ",div)
+
+Calculation(5.3,7.6,9)
+
+def remainder(p,q):
+    m=p%q
+    return m
+
+result=remainder(9,4)
+print("Remainder  of 9/4 is ",result)
+
+def larger(g,h):
+    if g>h:
+        return g
+    else:
+        return h
+
+print("Larger number between 49 and 69 is ",larger(49,69))'''
+
+print("xargs-----------------------------------------------")
+
+def student(*details):
+    print(details)
+
+student(1808059,"Rezwanur")
+student(1808034,"Jaoyad",3.9)
+
+print("________________________________________________________")
+
+def add(*numbers):
+    sum=0
+    for num in numbers:
+        sum+=num
+    print("Sum in example xargs: ",sum)
+
+add(10,20)
+add(50,60,70)
+
+
+
+print("________________________________________________")
