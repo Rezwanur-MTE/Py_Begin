@@ -371,7 +371,7 @@ def larger(g,h):
     else:
         return h
 
-print("Larger number between 49 and 69 is ",larger(49,69))'''
+print("Larger number between 49 and 69 is ",larger(49,69))
 
 print("xargs-----------------------------------------------")
 
@@ -392,6 +392,138 @@ def add(*numbers):
 add(10,20)
 add(50,60,70)
 
+print("Lambda function________________________________________________")
 
+# (lambda parameter : expression)(argument pass)
 
-print("________________________________________________")
+print("Calculating from Lambda function= ",(lambda a,b: a*a + 2*a*b + b*b)(5,7))
+
+print(" \n")
+
+print("Map and filter function ----------------------------------------------")
+
+def square(x):
+    return x*x
+
+num=[1,2,3,4,5]
+result= list(map(square, num))
+print("Square of every number of list using map : ",result)
+print("\nfilter ")
+print("By Lambda function.....")
+result1 = list(filter(lambda x: x%2==0,num))
+print("Filtering prime number from list :",result1)
+
+print("Alternatingly by named function.....")
+
+def prime(x):
+    return x%2==0
+
+result2=list(filter(prime,num))
+print("Filtering prime number from list: ",result2)
+
+print("List comprehenion.....")
+
+num2=[3,5,7,11,13]
+
+result3=[x*x for x in num2]
+print("Square operation of num2 list: ",result3)
+
+num3=[4,8,11,9,18,26,31,39]
+result4 = [x for x in num3 if x%2==0]
+print("Even numbers are ",result4)
+
+roll=[1808059, 1808034,1808044,1808036]
+name=["Rezwanur","Jaoyad","Sagar","Saad"]
+info= list(zip(roll,name))
+print("Merging roll and name list ",info)
+
+print("Recursion------------------------")
+
+def fact(n):
+    if n==1:
+       return 1
+    else:
+       return n*fact(n-1)
+
+print("Factorial of given value ",fact(6))
+
+print("Python file----------------------------------------")
+
+file1 = open("researchtopic.txt","r")   #Here file1 is a random variable token, "r" mean readable."w " mean writeable."r+" means readable writeable both
+print(file1.readable())
+
+text = file1.read()
+print("Text from the file ",text)
+size=len(text)
+print(size)
+
+file1 = open("researchtopic.txt","r")    
+textlist = file1.readlines()              #converting lines into list 
+print(textlist)
+
+print("Printing flie by using for loop-----")
+file2 = open("researchtopic.txt","r+")
+for line in file2:
+     print(line)
+
+# writing only "w" will delete previous text from file and let you write new texts
+# in appeand mode, "a" - will keep previous text in file and can add new text
+
+file3 = open("LearningPlan.txt","a")
+file3.write("\n Learning for research purpose:"
+            "\n 1. Excel with Python"
+            "\n 2. DSA with Python"
+            "\n 3. Statistics with Python"
+            "\n 4. Data visualisation"
+            "\n 5. ML and DL "
+            "\n 6. Solidity and Blockchain")
+
+print("Making a new file and writing text in it through coding ---------------")
+
+file4 = open("About Me.txt","w")
+file4.write(" This is Rezewanur Rahman \n Not a nerd but hard worker "
+              "\nHSC gpa 4.83 and University GPA 3.18 till 2021\n Studying Mechatronics Engineering\n"
+              "Have experience in Microcontroller, Android Development, Game Development \n"
+              "Started ML and DL in 2022 for Researching in Market Intelligence "
+              "\n My best quality is 'I take the challenge and I try' .")
+file5 = open("Web Form.html","w")   # careful , comment the whole thing if you don't want to change web form file.
+file5.write("<html>"
+"<head> <title> Web Registration form </title>  </head>"
+"\n<body>"
+"\n<h4> Enter your Information </h4>"
+"\n<form>"
+"\n<lable>Full Name: </lable>"
+"\n<input type="#text"> <br><br>"
+"\n<lable> Password: </lable>"
+"\n<input type="#password"> <br><br>"
+"\n<lable> Email: </lable>"
+"\n<input type="#email">"
+"\n<br><br>"
+"\n<lable> Gender: </lable>"
+"\n<input type="#radio">Male"
+"\n<input type="#radio">Female"
+"\n<input type="#radio">others <br><br>"
+"\nReligion: <input type="#checkbox">ISLAM .<input type="checkbox">HINDU. <br><br>"
+"\n<lable> Subject: </lable>"
+"\n<select>"
+"\n<option>Bangla</option>"
+"\n<option>English</option>"
+"\n<option>Math</option>"
+"\n<option>Physics</option>"
+"\n<option>Chemistery</option>"
+"\n<option>Biology</option>"
+"\n<option>ICT</option>"
+"\n</select> "
+"\n<br><br>"
+"\nComment: <br><textarea column="#10" row="5"></textarea> <br>"
+"\n<input type="#submit"> <input type="#reset">"
+"\n</form>"
+"\n</body>"
+"\n</html>"
+
+)              # Ha..Ha.. Some text in here are commented out for syntax overlap between Python and HTML
+
+file1.close()'''
+
+print("____________-------------------------_____________________")
+
