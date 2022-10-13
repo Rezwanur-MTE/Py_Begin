@@ -1,0 +1,15 @@
+Learning as an MTE:
+1. English spoken 
+2. Electronics
+3. PLC and Automation
+4. Robotics and control system
+5. Mechanical properties .
+
+
+ Learning for research purpose:
+ 1. Excel with Python
+ 2. DSA with Python
+ 3. Statistics with Python
+ 4. Data visualisation
+ 5. ML and DL 
+ 6. Solidity and Blockchain
