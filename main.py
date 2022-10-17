@@ -1,5 +1,5 @@
 
-'''name=input("Enter His name :")
+name=input("Enter His name :")
 age=int(input(" the age :"))
 gpa=float(input("PUT CG :"))
 
@@ -96,7 +96,7 @@ while int(i)<=z:
     sum = int(sum)+ int(i)   #type casted , from string to integer
     i+=1
 print("End of counting")
-print"Sum is",sum
+print("Sum is",sum)
 print("-------------------------------------------------------------") 
 
 # Break and continue
@@ -189,7 +189,7 @@ print(sum2)
 # Series of square 1^1 + 2^2 + 3^3 + 4^4 + 5^5 +........n^n
 
 sum3=0
-from math import *
+# from math import *
 for x in range(1,n+1,1):
          sum3=sum3+ pow(x,x)
 print(sum3)
@@ -523,7 +523,301 @@ file5.write("<html>"
 
 )              # Ha..Ha.. Some text in here are commented out for syntax overlap between Python and HTML
 
-file1.close()'''
+file1.close()
 
-print("____________-------------------------_____________________")
+print("____________------------Exception Handling-------------_____________________")
 
+try:
+    list=[20,0,30]
+    p=int(input("Enter what index you want = "))
+    div=list[0]/list[p]
+    print("The division between index 0 and ",p," is ",div)
+    print("Done with no exception")
+except ZeroDivisionError :
+       print("Dividing by 0 is not possible you stupid!")
+except IndexError:
+       print("You are out of index")
+
+finally: 
+    print("Whatever runtime error come out I don't care, I will be printed")
+
+
+def voter(age):
+    if age< 18:
+        raise ValueError(" You are Invalid Voter.")
+
+    return "You are allowed to vote sir."
+
+try : 
+
+    n=int(input("What's your age? : "))
+    print(voter(n))
+
+except ValueError as e :
+      print(e)
+
+print("Object Oriented Programming---------------------------------------------------------")
+print("Class, constructor and Object --------------------------------------")
+
+class Student:
+      name=" "
+      roll=" "
+      gpa=" "
+
+      def setvalue(self,name,roll,gpa):
+          self.name=name
+          self.roll=roll
+          self.gpa=gpa
+
+      def display(self):
+          print("Student's name is ",self.name," Roll is ",self.roll," His GPA is ",self.gpa)
+
+A_Rahim=Student()      # An object of student class
+print(isinstance(A_Rahim,Student))
+#print(isinstance(Karim,Student))    it will show false cause it is not object of student class
+A_Rahim.name="Abdur Rahim"
+A_Rahim.roll=1809001
+A_Rahim.gpa=3.9
+
+print("Student's name is ",A_Rahim.name," Roll is ",A_Rahim.roll," His GPA is ",A_Rahim.gpa)
+
+Jaoyad=Student()       # Another Object of student class
+Jaoyad.name="S M Jaoyad Dipto"
+Jaoyad.roll=1808059
+Jaoyad.gpa=4
+print(f"Name is {Jaoyad.name}, Roll is {Jaoyad.roll}, His CGPA is {Jaoyad.gpa} ")
+
+Fahim=Student()
+Fahim.setvalue("Rezwanur Rahman",1808059,3.4)    # passing value in class through function
+Fahim.display()        # Accessing function in student Class
+
+from math import *
+class EqnSolve:
+    a=" "
+    b=" "
+    c=" "
+    def __init__(self,a,b,c):    # it is a constructor , it can receive value from Object.
+        self.a=a
+        self.b=b
+        self.c=c
+     
+    def determinant(self):      # it is parameterless function , but it will access predefined variables in this class by using 'self' keyword
+        p=self.a       # i declared extra p, q, r variables so that it can help writing equation , otherwise i needed to write ' .self ' keyword everytime
+        q=self.b
+        r=self.c
+        x= (-q + sqrt(q*q-4*p*r))/2*p
+        print("Solution of the quadratic equation= ",x)
+
+
+# making object of EqnSolve class 
+Calculation1=EqnSolve(5,25,3)   # setting value through constructor during Object declaration
+Calculation1.determinant()
+
+class Triangle:
+      def __init__(self, base, height):
+          self.base=base
+          self.height=height
+
+      def calculate_area(self):
+          area=0.5*self.base*self.height
+          print("Area of the triangle is ",area)
+
+t1=Triangle(15,18)    # t1 is an object of Triangle class
+t1.calculate_area()
+
+t2=Triangle(20,30)
+t2.calculate_area()
+
+print("Inheritence-------------------------------------")
+
+class Phone:
+      def call(self):
+          print("You are calling")
+
+      def massege(self):
+          print("You are massegeing")
+
+class samsung(Phone):
+    # call() and massege() is invisiblly present here
+      def camera(self):
+          print("You can take photos")
+
+Galaxy_note10= samsung()
+Galaxy_note10.call()         # notice here , function in Phone class can be access through object of samsung class
+Galaxy_note10.massege()
+Galaxy_note10.camera() 
+
+print("Method overriding------------------------------")
+
+class Person:
+      name=" "
+      age=" "
+      def displayfunction(self):
+          print(" This guy's name is ",self.name," and he is ",self.age," years old.")
+
+class Teacher(Person):
+      qualification=" "
+      def displayfunction(self):                # this is same named function of Person class and Teacher class 
+          super().displayfunction()
+          print(" This person is a teacher, he has a degree on ",self.qualification)
+
+Palash = Teacher()
+Palash.name="Palash Kumar Dey"
+Palash.age=45
+Palash.qualification="Physics"
+Palash.displayfunction()
+
+print("Example----------------------------------------")
+
+class Shape:
+      def __init__(self,dim1 ,dim2,h ):       # constructor for passing value through object declaration
+          self.dim1=dim1
+          self.dim2=dim2
+          self.h=h
+ 
+      def area(self):
+         print("This is Area, Function from shape class")
+
+class Trapisium(Shape):
+      def area(self):       # this is overridden
+          area=0.5*(self.dim1 + self.dim2)*self.h
+          print(" The area of Trapizium is ", area)
+
+class Rectangle(Shape):
+      def area(self):      # overridden function from shape class
+          area=self.dim1*self.dim2
+          print("The area of a rectangle inside the trapizium is  ",area)
+
+a=int(input("Input Dimension 1 = "))
+b=int(input("Input dimension 2 ="))
+x=int(input(" Input distance between parallel arms= "))
+
+trap1= Trapisium(a,b,x)
+trap1.area()
+
+Rec1= Rectangle(a,b,x)
+Rec1.area()
+
+
+print("Multi-level Inheritance---------------------------")
+
+class A:
+      def display1(self):
+          print("This is inside A class")
+
+class B(A):
+      def display2(self):
+          print("This is inside B class")
+
+class C(B):
+      def display3(self):
+          super().display2()
+          super().display1()
+          print("This is inside C class")
+
+ob1= C()
+ob1.display3()
+
+print("Multiple Inheritance---------------------------")
+class P:
+      def display(self):
+          print("This is inside P class")
+
+class Q:
+      def display(self):
+          print("Printing from Q class")
+
+class R(Q,P):
+      pass               # if we want to keep this class empty then we must write 'pass' , otherwise it shows error
+
+Ob2= R()
+Ob2.display()
+
+
+
+print("Abstraction------------------------------------------------------------")
+
+from abc import ABC,abstractmethod
+
+class Shape:
+      def __init__(self, a, b):
+          self.a=a
+          self.b=b
+     
+      @abstractmethod
+      def area(self):         # Abstract function , which has no body 
+          pass
+
+class Triangle(Shape):
+
+      def area(self):          # Must have to use this function cause it is abstracted in Shape class which is inherited here     
+          area=0.5*self.a*self.b
+          print("Area from Abstraction example ",area)
+
+trivuz= Triangle(5,7)
+trivuz.area()
+
+
+
+print("Polymorphism ----------------------------------------------------")
+     
+#Built in polymorphic function 
+print(len("Rezwanur Rahman"))
+print(len([10,20,30]))
+
+#User define polymorphism
+
+def add(x,y,z=0):
+    return x+y+z
+
+print(add(5,7))
+print(add(5,7,9))
+
+print("Module---------------------------------------------")
+
+from Area_module import *
+
+Triangle(10,20)
+Circle(7)
+
+print("Regular Expression-------------------------------------------------------------\n")
+
+import re
+
+pattern1= r"Colour"
+
+if re.match(pattern1,"Colour of rose is red, What the hell! Your dog is Dead?"):
+    print("Matches the pattern at the begining of the string \n")
+
+else:
+     print("Pattern doesn't match. \n")
+
+pattern2= r"colour"
+
+if re.search(pattern2,"Black is not a colour, it is absence of light"):
+    print("Found a match somewhere in the string \n")
+
+else:
+     print("Found nothing. \n")
+
+
+pattern3= r"love"
+
+print(re.findall(pattern3,"I loved a girl but she lied, I found no existance of love, but D.Brand said love is the one thing we are capable of perceiving that transcends dimensions of time and space, love is powerful , observable"))
+
+pattern4= r"book"
+text= " knowledge that we gain from books, but what will you do with just bookish knowledeg unless you can implement that!"
+
+object=re.search(pattern4,text)
+
+if object:
+   print(object.start())
+   print(object.end())
+   print(object.span())
+
+pattern5=r"colour"
+text2="My favourite colour is Black, but black is not actually colour it is absence of light"
+object2=re.sub(pattern5,"replaced_color",text2)
+print("After replace: ",object2)
+
+#this is the end of basic Python
